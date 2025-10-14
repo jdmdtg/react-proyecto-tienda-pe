@@ -19,7 +19,8 @@ const ProductoDetalle = () => {
   
   return(
     <>
-      <h2>Detalles del Producto Nro {id}</h2>
+      <h2>Virtual Store</h2>
+      <h2>Product Details Nro {id}</h2>
       <img src={products.image} alt={products.title} width={100} height={100} />
       <h3>{products.title}</h3>
       <p>{products.description}</p>

@@ -1,8 +1,6 @@
-// import { useState } from 'react';
-import Carrito from './components/Carrito';
 import Header from './components/Header';
 import Inicio from './pages/Inicio';
-import Moda from './pages/Moda';
+import Fashion from './pages/Fashion';
 import Contactos from './pages/Contactos';
 import ProductoDetalle from './pages/productoDetalle';
 import { Routes, Route } from 'react-router-dom';
@@ -17,17 +15,14 @@ function App() {
 
             <Routes> 
             <Route path='/' element={<Inicio />}/> 
-            <Route path='/moda' element={<Moda />}/> 
-            <Route path='/Contactos' element={<Contactos />}/>
+            <Route path='/Fashion' element={<Fashion />}/> 
             <Route path='/Hotsale' element={<HotSale />}/>
+            <Route path='/Contactos' element={<Contactos />}/>
             <Route path='/products/:id' element={<ProductoDetalle />}/>
                             
             </Routes>  
           <Footer/>  
-    </>
-   
-   
-    
+    </>   
   )
 }
 

@@ -1,11 +1,11 @@
 const Contactos = () => {
   return(
     <div>
-        <h2>Contactos</h2>
-        <p>Correo: jdmdt@gmail.com</p>
-        <p>Teléfono: +57 300 123 4567</p>
-        <p>Dirección: Calle Paloma c/c Gavilan 123, Ciudad: Cueva, País: Nido</p> 
-        <p>Horario de atención: Lunes a Viernes, 9:00 AM - 6:00 PM</p>
+        <h2>Contact</h2>
+        <p>Email: jdmdt@gmail.com</p>
+        <p>Phone: +57 300 123 4567</p>
+        <p>Address: Paloma Street, Gavilan Street, 123, City: Cueva, Country: Nido</p> 
+        <p>Business hours:Monday to Friday, 9:00 AM - 18:00 PM</p>
     </div>
 
 );  

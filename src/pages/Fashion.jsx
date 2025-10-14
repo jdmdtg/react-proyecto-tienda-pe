@@ -1,4 +1,4 @@
-const Moda = () => {
+const Fashion = () => {
   return(
     <div>
       <h2>Fashion</h2>
@@ -7,4 +7,4 @@ const Moda = () => {
   );
 }
 
-export default Moda;
+export default Fashion;

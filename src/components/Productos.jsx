@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
- 
+import styles from '../components/Carrito.module.css';
 
 const Productos = ({ agregarProducto }) => {
   
@@ -32,7 +32,7 @@ const Productos = ({ agregarProducto }) => {
 
   return(
     <div>
-      <h2>Productos</h2>
+      <h2>Products</h2>
       <ul>
         {productos.map((producto) => (
           <div>
@@ -42,12 +42,11 @@ const Productos = ({ agregarProducto }) => {
                 <tr>
                   <td><img src={producto.image} height={100} width={100}/></td>
                     <td>  
-                      <button onClick={() => agregarProducto(producto)}>Agregar al Carrito</button>
-                      <Link to={`/products/${producto.id}`} >Detalles Produto</Link> 
+                      <button className={styles.buttonGreen} onClick={() => agregarProducto(producto)}>Add Cart</button>
+                      <Link to={`/products/${producto.id}`} >Product Details</Link> 
                     </td> 
                 </tr>  
-                <tr> 
-                  
+                <tr>                   
                   <td>{producto.category}</td>
                   <td><h3>{producto.title} : Price {producto.price}$ </h3></td>    
                </tr>
@@ -55,7 +54,6 @@ const Productos = ({ agregarProducto }) => {
                         
             </li>
           </div>
-
         ))}
       </ul>
     </div>

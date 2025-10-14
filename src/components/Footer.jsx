@@ -2,23 +2,19 @@
 import styles from './footer.module.css';
 
 const Footer = () => {
-  
   const anioActual = new Date().getFullYear();
-
   return (
     <footer className={styles.footer}>
-   
       <ul className={styles.footerNav}>
         <li>
-          <a href="#" className={styles.footerLink}>Estudiante de React</a>
+          <a href="#" className={styles.footerLink}>React student</a>
         </li>
         <li>
-          <a href="#" className={styles.footerLink}>Política de Privacidad</a>
+          <a href="#" className={styles.footerLink}>Privacy Policy</a>
         </li>
-      </ul>
-      {/* Seccion de Copyright */}
+      </ul>      
       <p className={styles.copyright}>
-        © {anioActual} Tienda PE. Todos los derechos reservados.
+        © {anioActual} PE Store. All rights reserved.
       </p>
     </footer>
   );

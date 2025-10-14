@@ -1,18 +1,16 @@
 import { Link } from "react-router-dom";
-import React from 'react';  
 import styles from './NavBar.module.css';
 
 
 function NavBar() {  
     return (  
-        <nav style={{ backgroundColor: "#333", color: "white", padding: "10px" }}>  
-            <ul style={{ listStyle: "none", display: "flex", justifyContent: "space-around", margin: 0 }}> </ul>
-            <ul>
-                <li className={styles.item}>  
-                    <Link to="/" className={styles.item}>Home</Link>  
-                    <Link to="/Moda" className={styles.item}>Fashion</Link>  
-                    <Link to="/Hotsale" className={styles.item}>HotSale</Link>  
-                    <Link to="/Contactos" className={styles.item}>Contacts</Link>  
+        <nav>
+            <ul className={styles.lista}>            
+                <li className={styles.item}>
+                    <Link to="/" className={styles.link}>Home</Link>  
+                    <Link to="/Fashion" className={styles.link}>Fashion</Link>  
+                    <Link to="/Hotsale" className={styles.link}>HotSale</Link>  
+                    <Link to="/Contactos" className={styles.link}>Contacts</Link>  
                 </li>
             </ul>  
         </nav>  
