@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../components/Carrito.module.css';
 
+import React from 'react';
+ 
+
+
 const Productos = ({ agregarProducto }) => {
   
   const [productos, setProductos] = useState([]);
@@ -43,7 +47,10 @@ const Productos = ({ agregarProducto }) => {
                   <td><img src={producto.image} height={100} width={100}/></td>
                     <td>  
                       <button className={styles.buttonGreen} onClick={() => agregarProducto(producto)}>Add Cart</button>
-                      <Link to={`/products/${producto.id}`} >Product Details</Link> 
+                      <button className={styles.buttonDetalle}>
+                            <Link to={`/products/${producto.id}`}>Products Details</Link>                      
+                      </button>
+                      
                     </td> 
                 </tr>  
                 <tr>                   
