@@ -19,7 +19,7 @@ const Inicio = () => {
     <>
     <table width="100%">
       <tr>
-        <td><h2>Virtual Store</h2></td>
+        <td><h2>Home</h2></td>
         <td align="center">Products in Cart: {carrito.length}</td>                      
       </tr>
     </table>   

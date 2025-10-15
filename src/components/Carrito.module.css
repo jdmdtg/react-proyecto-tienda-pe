@@ -2,7 +2,7 @@
    border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: 500;
   font-family: inherit;
   background-color: #df1212;
@@ -14,7 +14,7 @@
    border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: 500;
   font-family: inherit;
   background-color: #12df23;
@@ -26,10 +26,42 @@
    border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: 500;
   font-family: inherit;
   background-color: #33a6b5;
   cursor: pointer;
   transition: border-color 0.25s;
+}
+ 
+ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Crea columnas responsivas */
+  gap: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;  
+}
+
+th, td {
+  padding: 8px; 
+  text-align: left;  
+  border-bottom: 1px solid #ddd; 
+}
+
+th {
+  background-color: #f2f2f2; 
+  font-weight: bold;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;  
+}
+tr:hover {
+  background-color: #ddd; 
+}
+a {
+  text-decoration: none;
 }

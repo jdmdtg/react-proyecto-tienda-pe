@@ -2,10 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../components/Carrito.module.css';
 
-import React from 'react';
- 
-
-
 const Productos = ({ agregarProducto }) => {
   
   const [productos, setProductos] = useState([]);
@@ -40,25 +36,23 @@ const Productos = ({ agregarProducto }) => {
       <ul>
         {productos.map((producto) => (
           <div>
-            <li key={producto.id}>
-               
-               <table>
-                <tr>
-                  <td><img src={producto.image} height={100} width={100}/></td>
-                    <td>  
-                      <button className={styles.buttonGreen} onClick={() => agregarProducto(producto)}>Add Cart</button>
-                      <button className={styles.buttonDetalle}>
-                            <Link to={`/products/${producto.id}`}>Products Details</Link>                      
-                      </button>
-                      
-                    </td> 
-                </tr>  
-                <tr>                   
-                  <td>{producto.category}</td>
-                  <td><h3>{producto.title} : Price {producto.price}$ </h3></td>    
-               </tr>
-               </table>
-                        
+            <li key={producto.id}>            
+                  <img src={producto.image} height={150} width={150}/>
+                  <table >
+                    <tr>  
+                      <td>
+                        <button className={styles.buttonGreen} onClick={() => agregarProducto(producto)}>Add Cart</button>
+                      </td>
+                      <td> 
+                        <button className={styles.buttonDetalle}>
+                          <Link to={`/products/${producto.id}`}>Products Details</Link>                      
+                        </button>
+                      </td>
+                    </tr>  
+                  </table>
+                  <h4>{producto.category}</h4>
+                  <h4>{producto.title}</h4> 
+                  <h4>{producto.price}$</h4>                                     
             </li>
           </div>
         ))}
