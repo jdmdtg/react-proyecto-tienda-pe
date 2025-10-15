@@ -9,8 +9,7 @@ const ProductoDetalle = () => {
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
       .then(respuesta => respuesta.json())
-      .then(dato => 
-        setProducto(dato)
+      .then(dato => setProducto(dato)
     );
   },[id]);
 
