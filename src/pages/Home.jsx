@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Productos from '../components/Productos';
 import Carrito from '../components/Carrito';
 
-const Inicio = () => {
+const Home = () => {
   const [carrito, setCarrito] = useState([]);
  
   // Agregar Producto.
@@ -34,4 +34,4 @@ const Inicio = () => {
   );
 }
 
-export default Inicio;
+export default Home;

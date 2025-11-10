@@ -2,31 +2,29 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const ProductoDetalle = () => {
-  
   const { id } = useParams();
   const [products, setProducto] = useState(null);
-  
-  useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-      .then(respuesta => respuesta.json())
-      .then(dato => setProducto(dato)
-    );
-  },[id]);
 
-  if(!products)
-    return <p>Cargando ......</p>
-  
-  return(
+  useEffect(() => {
+    // fetch(`https://fakestoreapi.com/products/${id}`) se reemplaza con el mockapi nuestra.
+    fetch(
+      `https://6904e0af6b8dabde496575fb.mockapi.io/tienda_proyecto_final_react_jgm/productos/${id}`
+    )
+      .then((respuesta) => respuesta.json())
+      .then((dato) => setProducto(dato));
+  }, [id]);
+
+  if (!products) return <p>Cargando ......</p>;
+
+  return (
     <>
-      
       <h2>Product Details Nro {id}</h2>
       <img src={products.image} alt={products.title} width={100} height={100} />
       <h3>Name:{products.title}</h3>
       <p>Description: {products.description}</p>
-      <h4>Price:{products.price}$</h4>   
+      <h4>Price:{products.price}$</h4>
     </>
-    
   );
-}
+};
 
 export default ProductoDetalle;
