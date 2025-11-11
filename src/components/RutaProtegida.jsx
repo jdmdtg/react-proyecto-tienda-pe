@@ -4,8 +4,8 @@ import { useAuthContext } from "../context/AuthContext";
 const RutaProtegida = ({ children }) => {
   const { usuario } = useAuthContext();
 
-  if (!usuario) 
-    return <Navigate to="/login" replace />;
+  if (!usuario) return <Navigate to="/login" replace />;
+
   return children;
 };
 

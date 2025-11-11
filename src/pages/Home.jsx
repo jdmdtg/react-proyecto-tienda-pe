@@ -1,37 +1,47 @@
-import { useState } from 'react';
-import Productos from '../components/Productos';
-import Carrito from '../components/Carrito';
-
+import Productos from "../components/Productos";
 const Home = () => {
-  const [carrito, setCarrito] = useState([]);
- 
-  // Agregar Producto.
-  const agregarAlCarrito = (producto) => {
-    setCarrito([...carrito, producto]);   
-  };
-  
-  // Eliminar Productos del carrito
-  const eliminarDelCarrito = (indiceAEliminar) => {
-    setCarrito(carrito.filter((_, indice) => indice !== indiceAEliminar));
-  };
-
-  return( 
+  return (
     <>
-    <table width="100%">
-      <tr>
-        <td><h2>Home</h2></td>
-        <td align="center">Products in Cart: {carrito.length}</td>                      
-      </tr>
-    </table>   
-          <Productos agregarProducto={agregarAlCarrito}/>
-        <hr/>          
-          <Carrito 
-          productosEnCarrito={carrito}
-          productosEliminados={eliminarDelCarrito}
-          />
-        
+      <Productos />
     </>
   );
-}
-
+};
 export default Home;
+
+// import { useState } from 'react';
+// import Productos from '../components/Productos';
+// import Carrito from '../components/Carrito';
+
+// const Home = () => {
+//   const [carrito, setCarrito] = useState([]);
+
+//   // Agregar Producto.
+//   const agregarAlCarrito = (producto) => {
+//     setCarrito([...carrito, producto]);
+//   };
+
+//   // Eliminar Productos del carrito
+//   const eliminarDelCarrito = (indiceAEliminar) => {
+//     setCarrito(carrito.filter((_, indice) => indice !== indiceAEliminar));
+//   };
+
+//   return(
+//     <>
+//     <table width="100%">
+//       <tr>
+//         <td><h2>Home</h2></td>
+//         <td align="center">Products in Cart: {carrito.length}</td>
+//       </tr>
+//     </table>
+//           <Productos agregarProducto={agregarAlCarrito}/>
+//         <hr/>
+//           <Carrito
+//           productosEnCarrito={carrito}
+//           productosEliminados={eliminarDelCarrito}
+//           />
+
+//     </>
+//   );
+// }
+
+// export default Home;

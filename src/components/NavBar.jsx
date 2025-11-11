@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./NavBar.module.css";
+import styles from "./Navbar.module.css";
 import { useAuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
@@ -11,20 +11,25 @@ const Navbar = () => {
       <ul className={styles.lista}>
         <li className={styles.item}>
           <Link to="/" className={styles.link}>
+            {" "}
             Home
           </Link>
           <Link to="/Fashion" className={styles.link}>
-            Fashion
+            {" "}
+            Fashion{" "}
           </Link>
           <Link to="/Hotsale" className={styles.link}>
-            HotSale
+            {" "}
+            HotSale{" "}
           </Link>
           <Link to="/Contactos" className={styles.link}>
-            Contacts
+            {" "}
+            Contacts{" "}
           </Link>
           {esAdmin && (
             <Link to="/admin" className={styles.link}>
-              Admin
+              {" "}
+              Admin{" "}
             </Link>
           )}
         </li>

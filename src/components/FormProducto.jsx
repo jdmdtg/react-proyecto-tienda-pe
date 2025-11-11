@@ -1,6 +1,6 @@
 //import { useState, useContext } from "react";
 import { useState } from "react";
-//import { ProductoContext } from "../context/ProductoContext";
+import { ProductoContext } from "../context/ProductoContext";
 
 const FormProducto = ({ onAgregar }) => {
   //const { agregarProducto, editarProducto } = useContext(ProductoContext);
@@ -9,16 +9,13 @@ const FormProducto = ({ onAgregar }) => {
     nombre: "",
     precio: "",
     imagen: "",
-    descripcion: "",
+    descripcion: ""
   });
 
   const HashChange = (e) => {
     // evento de control de cambios en el formulario
     const { name, value } = e.target;
-    setProducto({
-      ...producto,
-      [name]: value,
-    });
+    setProducto({...producto,[name]: value,});
   };
 
   const validarFormulario = () => {
@@ -59,7 +56,7 @@ const FormProducto = ({ onAgregar }) => {
       nombre: "",
       precio: "",
       imagen: "",
-      descripcion: "",
+      descripcion: ""
     });
     setErrores({}); // Reseteas los errores
   };

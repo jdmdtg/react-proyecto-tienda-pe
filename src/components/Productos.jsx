@@ -1,11 +1,18 @@
+import { useContext } from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "../components/Carrito.module.css";
+import { CarritoContext } from "../context/CarritoContext";
 
-const Productos = ({ agregarProducto }) => {
+//const Productos = ({ agregarProducto }) => {
+const Productos = () => {
   const [productos, setProductos] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
+
+  // usa el contexto del carrito para obtener la función agregarProducto
+  const { agregarAlCarrito } = useContext(CarritoContext);
+  // const { agregarProducto } = useContext(CarritoContext);
 
   //  const URL = 'https://fakestoreapi.com/products'; reemplazamos por la mockAPI
   const URL =
@@ -14,14 +21,10 @@ const Productos = ({ agregarProducto }) => {
   useEffect(() => {
     fetch(URL)
       .then((respuesta) => respuesta.json())
-      .then((datos) => {
-        setProductos(datos);
-        setCargando(false);
-      })
-      .catch((error) => {
-        setError("Error al cargar productos");
-        setCargando(false);
-      });
+      .then((datos) => setProductos(datos))
+      //.then((datos) => {setProductos(datos);setCargando(false);})
+      .catch((error) => setError("Error al cargar productos"))
+      .finally(() => setCargando(false));
   }, []);
 
   if (cargando) return <p>Cargando productos...</p>;
@@ -41,7 +44,7 @@ const Productos = ({ agregarProducto }) => {
                   <td>
                     <button
                       className={styles.buttonGreen}
-                      onClick={() => agregarProducto(producto)}
+                      onClick={() => agregarAlCarrito(producto)}
                     >
                       Add Cart
                     </button>

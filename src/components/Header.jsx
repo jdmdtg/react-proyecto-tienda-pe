@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header className={styles.Header}>
-      <div className={styles.logo}>SU TIENDA</div>
+      <div className={styles.logo}>PE Store</div>
       <div className={styles.navbarContainer}>
         <h2>Vistual Store</h2>
       </div>
