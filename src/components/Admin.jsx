@@ -1,5 +1,11 @@
+import GestionProductos from "./GestionProducto";
 const Admin = () => {
-  return <h1>Admin</h1>;
+  return (
+    <div>
+      <h1> Gestión de Productos</h1>
+      <GestionProductos />
+    </div>
+  );
 };
 
 export default Admin;

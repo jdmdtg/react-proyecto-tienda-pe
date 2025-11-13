@@ -17,6 +17,7 @@ export const ProductoProvider = ({ children }) => {
       )
     );
   };
+
 // -------------eliminar------------
   const eliminarProducto = (id) => {
     setProductos(productos.filter((producto) => producto.id !== id));

@@ -11,25 +11,20 @@ const Navbar = () => {
       <ul className={styles.lista}>
         <li className={styles.item}>
           <Link to="/" className={styles.link}>
-            {" "}
             Home
           </Link>
           <Link to="/Fashion" className={styles.link}>
-            {" "}
-            Fashion{" "}
+            Fashion
           </Link>
           <Link to="/Hotsale" className={styles.link}>
-            {" "}
-            HotSale{" "}
+            HotSale
           </Link>
           <Link to="/Contactos" className={styles.link}>
-            {" "}
-            Contacts{" "}
+            Contacts
           </Link>
           {esAdmin && (
-            <Link to="/admin" className={styles.link}>
-              {" "}
-              Admin{" "}
+            <Link to="/Admin" className={styles.link}>
+              Admin
             </Link>
           )}
         </li>

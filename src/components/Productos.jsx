@@ -12,18 +12,17 @@ const Productos = () => {
 
   // usa el contexto del carrito para obtener la función agregarProducto
   const { agregarAlCarrito } = useContext(CarritoContext);
-  // const { agregarProducto } = useContext(CarritoContext);
-
+ 
   //  const URL = 'https://fakestoreapi.com/products'; reemplazamos por la mockAPI
   const URL =
     "https://6904e0af6b8dabde496575fb.mockapi.io/tienda_proyecto_final_react_jgm/productos";
-
+  
   useEffect(() => {
     fetch(URL)
       .then((respuesta) => respuesta.json())
       .then((datos) => setProductos(datos))
       //.then((datos) => {setProductos(datos);setCargando(false);})
-      .catch((error) => setError("Error al cargar productos"))
+      .catch((error) => setError("Error al cargar productos." + error.message))
       .finally(() => setCargando(false));
   }, []);
 
@@ -38,7 +37,7 @@ const Productos = () => {
         {productos.map((producto) => (
           <div>
             <li key={producto.id}>
-              <img src={producto.image} height={150} width={150} />
+              <img src={producto.imagen} height={150} width={150} />
               <table>
                 <tr>
                   <td>
@@ -58,9 +57,10 @@ const Productos = () => {
                   </td>
                 </tr>
               </table>
-              <h4>{producto.category}</h4>
-              <h4>{producto.title}</h4>
-              <h4>{producto.price}$</h4>
+              <h4>{producto.Nombre}</h4>
+              <h4>{producto.descripcion}</h4>
+              <h4>{producto.precio}$</h4>
+              <h4>{producto.cantidad}$</h4>
             </li>
           </div>
         ))}

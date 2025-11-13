@@ -13,7 +13,7 @@ const Login = () => {
 
     if (usuario == "admin" && contrasenia == "admin1234") {
       login(usuario);
-      navigate("/admin");
+      navigate("/Admin");
     } else {
       <p style={{ color: "red" }}>Credenciales Incorrectos</p>;
     }
