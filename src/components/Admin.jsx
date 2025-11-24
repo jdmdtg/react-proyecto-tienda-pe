@@ -1,8 +1,9 @@
 import GestionProductos from "./GestionProducto";
+
 const Admin = () => {
   return (
     <div>
-      <h1> Gestión de Productos</h1>
+      <h3 > Gestión de Productos </h3>
       <GestionProductos />
     </div>
   );

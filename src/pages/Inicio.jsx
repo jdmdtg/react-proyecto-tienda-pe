@@ -1,12 +1,12 @@
 import Productos from "../components/Productos";
-const Home = () => {
+const Inicio = () => {
   return (
     <>
       <Productos />
     </>
   );
 };
-export default Home;
+export default Inicio;
 
 // import { useState } from 'react';
 // import Productos from '../components/Productos';

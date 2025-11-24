@@ -5,7 +5,8 @@ const Formulario = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     //console.log('Nombre enviado:', nombre);
-    <p style={{ color: "red" }}>${nombre} enviado</p>;
+    // <p style={{ color: "red" }}>${nombre} enviado</p>;
+    alert(`Form de: ${nombre} enviado`);
   };
   return (
     <form onSubmit={handleSubmit}>

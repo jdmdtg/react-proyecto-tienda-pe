@@ -1,7 +1,7 @@
 const Fashion = () => {
   return(
     <div>
-      <h2>Fashion</h2>
+      <h2>Moda</h2>
     </div>
     
   );

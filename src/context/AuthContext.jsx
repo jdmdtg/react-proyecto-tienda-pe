@@ -8,6 +8,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [usuario, setUsuario] = useState(null);
 
+  // establecer el localStorage al iniciar la aplicacion
   const login = (nombreUsuario) => {
     // Simulamos la creacion del token
     const token = `fake-token-${nombreUsuario}`;
@@ -15,6 +16,7 @@ export const AuthProvider = ({ children }) => {
     setUsuario(nombreUsuario);
   };
 
+  // funcion para cerrar sesion, remueve el token del localStorage
   const logout = () => {
     localStorage.removeItem("authToken");
     setUsuario(null);
@@ -28,4 +30,4 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuthContext = () => useContext(AuthContext);
-// export default AuthContext;
+ 

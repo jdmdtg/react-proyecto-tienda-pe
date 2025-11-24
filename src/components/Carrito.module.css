@@ -1,5 +1,5 @@
 .buttonRed {
-   border-radius: 8px;
+  border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 0.8em;
@@ -11,7 +11,7 @@
 }
 
 .buttonGreen {
-   border-radius: 8px;
+  border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 0.8em;
@@ -23,7 +23,7 @@
 }
 
 .buttonDetalle {
-   border-radius: 8px;
+  border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 0.8em;
@@ -33,35 +33,32 @@
   cursor: pointer;
   transition: border-color 0.25s;
 }
- 
-ul {
-  list-style-type: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Crea columnas responsivas */
-  gap: 20px;
+
+.container {
+  display: flex;
+  gap: 10px;
+  max-width: 900px;
+}
+.imagen {
+  height: 300px;
+  width: 300px;
+  align-content: center;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;  
+.panel {
+  flex: 1;
 }
 
-th, td {
-  padding: 8px; 
-  text-align: left;  
-  border-bottom: 1px solid #ddd; 
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+}
+h6{
+  color: #ffffff;
+  text-align: justify;
+  
 }
 
-th {
-  background-color: #f2f2f2; 
-  font-weight: bold;
-}
-tr:nth-child(even) {
-  background-color: #f9f9f9;  
-}
-tr:hover {
-  background-color: #ddd; 
-}
-a {
-  text-decoration: none;
+.card {
+  padding: 2em;
 }

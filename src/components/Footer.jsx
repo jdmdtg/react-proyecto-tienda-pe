@@ -7,17 +7,17 @@ const Footer = () => {
       <ul className={styles.footerNav}>
         <li>
           <a href="#" className={styles.footerLink}>
-            React student
+            React Estudiante
           </a>
         </li>
         <li>
           <a href="#" className={styles.footerLink}>
-            Privacy Policy
+            Politicas de Privacidad
           </a>
         </li>
       </ul>
       <p className={styles.copyright}>
-        © {anioActual} PE Store. All rights reserved.
+        © {anioActual} PE Tienda Virtual. Todos los derechos reservados.
       </p>
     </footer>
   );
