@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 // import styles from "./Navbar.module.css";
 import { useAuthContext } from "../context/AuthContext";
 
-const Navbar = () => {
+const NavBar = () => {
   const { usuario } = useAuthContext();
   // const esAdmin = usuario === "admin";
   const usuarioLogueado = usuario;
@@ -84,4 +84,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;
