@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import Navbar from "./Navbar";
+import NavBar from "./NavBar";
 // import styles from "../components/Header.module.css";
 import BagIcon from "../assets/BagIcon";
 import { Link } from "react-router-dom";
@@ -17,7 +17,7 @@ const Header = () => {
       <header className="d-flex justify-content-around">
         {/* <div >PF Tienda</div> */}
         <div>
-          <Navbar />
+          <NavBar />
         </div>
         {/* <div className="d-flex accordion-body-justify-content-end align-items-center p-2 d-md-flex"> */}
         <div>
