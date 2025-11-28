@@ -35,40 +35,44 @@ const GestionProductos = () => {
   };
 
   return (
-    <div className="bg-info bg-opacity-11 p-3 rounded-3">
-      
-      <div className={styles.panel}>
-        <div className={styles.cabecera}>
-          <h4>Lista de Productos.</h4>
-          {/* Botón para agregar producto */}
-          <button
-            onClick={abrirFormularioAgregar}
-            className={styles.botonAgregar}
-          >
-            <CirclePlus />
-            <p>Nuevo</p>
-          </button>
-        </div>
+    <div className="container">
+      <div className="row">
+        <h4 className="text-center">Lista de Productos.</h4>
+        {/* Botón para agregar producto */}
+        <button
+          onClick={abrirFormularioAgregar}
+          className={styles.botonAgregar}
+        >
+          <CirclePlus className="w-5 h-5" />
+          <p>Nuevo</p>
+        </button>
 
         {/* Lista de productos */}
-        <div>
-          {productos.length === 0 ? (
-            <p>No hay productos</p>
-          ) : (
-            <div style={{ display: "grid", gap: "5px" }}>
-              {productos.map((producto) => (
-                <div key={producto.id} className={styles.productoItem}>
-                  <img
-                    className={styles.imagen}
-                    src={producto.imagen}
-                    alt={producto.nombre}
-                  />
-                  <h3>{producto.nombre}</h3>
-                  <div>
-                    <h6>Precio:</h6> <p> ${producto.precio}</p>
-                    <h6>Existencia:</h6> <p>{producto.cantidad}</p>
-                    <h6>Descripción:</h6> <p>{producto.descripcion}</p>
+        {productos.length === 0 ? (
+          <p>No hay productos</p>
+        ) : (
+          <div className="">
+            {productos.map((producto) => (
+              <div key={producto.id} className="">
+                <div className="border border-4  ">
+                  {/* Imagen del producto */}
+                  <div className="">
+                    <img
+                      className="card-img-top col-12 col-md-4 col-lg-3"
+                      src={producto.imagen}
+                      alt={producto.nombre}
+                    />
                   </div>
+
+                  <div className="card-body">
+                    <h3 className="card-title">{producto.nombre}</h3>
+                    <p className="card-text">Precio: ${producto.precio}</p>
+                    <h6>Existencia:{producto.cantidad}</h6>
+                    <h6 className="card-text">
+                      Descripción: {producto.descripcion}{" "}
+                    </h6>
+                  </div>
+
                   {/* Botones para editar y eliminar este producto */}
                   <button
                     className={styles.boton}
@@ -86,10 +90,11 @@ const GestionProductos = () => {
                     <TrashIcon />
                   </button>
                 </div>
-              ))}
-            </div>
-          )}
-        </div>
+              </div>
+            ))}
+            ;
+          </div>
+        )}
 
         {/* Modal - Formulario condicional */}
         {mostrarForm && (
