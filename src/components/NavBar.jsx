@@ -4,21 +4,26 @@ import { useAuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
   const { usuario } = useAuthContext();
-  const esAdmin = usuario === "admin";
+  // const esAdmin = usuario === "admin";
+  const usuarioLogueado = usuario;
+
+
+
 
   return (
     <nav
-      className="navbar 
-      text-center fs-4
-      navbar-expand-lg
-      bg-info
-      navbar-light     
-      p-1
-      md-3
+      className="
+        navbar
+        text-center fs-3
+        navbar-expand-lg
+        bg-info
+        navbar-light
+        p-1
+        md-3
+
       "
     >
       <div class="d-flex- align-items-center container-fluid">
-        {/* <a class="navbar-brand" href="#">Navbar</a> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -58,26 +63,22 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              {esAdmin && (
+              {usuarioLogueado === "admin" && (
                 <Link to="/Admin" className="nav-link">
                   Administrador
                   <h6 className="text-center">(Jose Medina)</h6>
                 </Link>
               )}
             </li>
+            <li className="nav-item">
+              {usuarioLogueado === "usuario" && (
+                <Link to="/" className="nav-link">
+                  "Bienvenido"
+                  <h6 className="text-center">(Cliente)</h6>
+                </Link>
+              )}
+            </li>
           </ul>
-          {/* barra de busqueda */}
-          <form className="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Buscar"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Buscar
-            </button>
-          </form>
         </div>
       </div>
     </nav>

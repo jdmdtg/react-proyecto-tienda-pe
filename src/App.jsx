@@ -11,13 +11,14 @@ import VentaCaliente from "./pages/VentaCaliente";
 import Moda from "./pages/Moda";
 import ProductoDetalle from "./pages/ProductoDetalle";
 import Login from "./pages/Login";
-
+ 
 
 function App() {
   return (
     <>
+     
       <Header />
-
+  
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/Moda" element={<Moda />} />

@@ -5,7 +5,6 @@ import BagIcon from "../assets/BagIcon";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import { CarritoContext } from "../context/CarritoContext";
- 
 
 const Header = () => {
   const { carrito } = useContext(CarritoContext);
@@ -16,27 +15,29 @@ const Header = () => {
   return (
     <div className="bg-info p-1 d-flex justify-content-center mb-2">
       <header className="d-flex justify-content-around">
-        {/* <div className="">PF Tienda</div> */}
-        <div className="">
+        {/* <div >PF Tienda</div> */}
+        <div>
           <Navbar />
         </div>
         {/* <div className="d-flex accordion-body-justify-content-end align-items-center p-2 d-md-flex"> */}
-        <div className="">
+        <div>
           <div className="p-2">
             {estaLogueado ? (
-              <button onClick={logout} className="btn btn-outline-danger">Cerrar Sesión</button>
+              <button onClick={logout} className="btn btn-outline-danger">
+                Cerrar Sesión
+              </button>
             ) : (
               <Link to="/login">
-                <button className="btn btn-outline-primary mt-3">Iniciar Sesión</button>
+                <button className="btn btn-outline-primary mt-3">
+                  Iniciar Sesión
+                </button>
               </Link>
             )}
           </div>
           <div className="d-flex-align-items-center justify-content-end">
             <Link to="/carrito">
-              <BagIcon className="" />
-              {contadorEnCarrito > 0 && (
-                <span className="">{contadorEnCarrito}</span>
-              )}
+              <BagIcon />
+              {contadorEnCarrito > 0 && <span>{contadorEnCarrito}</span>}
             </Link>
           </div>
         </div>

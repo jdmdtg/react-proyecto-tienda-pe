@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+
 // Crear el contexto
 export const CarritoContext = createContext();
 // Proveedor del contexto
@@ -18,9 +19,19 @@ export const CarritoProvider = ({ children }) => {
     setCarrito([]);
   };
 
+  const MsnCompletoLaCompra = () => {
+    alert("Usted Completo la Compra con Éxito");
+  };
+
   return (
     <CarritoContext.Provider
-      value={{ carrito, agregarAlCarrito, eliminarDelCarrito, vaciarCarrito }}
+      value={{
+        carrito,
+        agregarAlCarrito,
+        eliminarDelCarrito,
+        vaciarCarrito,
+        MsnCompletoLaCompra,
+      }}
     >
       {children}
     </CarritoContext.Provider>

@@ -1,32 +1,74 @@
 import { useContext } from "react";
 import styles from "../components/Carrito.module.css";
 import { CarritoContext } from "../context/CarritoContext";
+import CartDash from "../assets/CartDash";
+import BagIcon from "../assets/BagIcon";
+import CartCheckFill from "../assets/CartCheckFill";
+import { Link } from "react-router-dom";
 
-//const Carrito = ({ productosEnCarrito, productosEliminados }) => {
 const Carrito = () => {
-  const { carrito, eliminarDelCarrito } = useContext(CarritoContext);
+  const { carrito, eliminarDelCarrito, vaciarCarrito, MsnCompletoLaCompra } =
+    useContext(CarritoContext);
+  const contadorEnCarrito = carrito.length;
 
   return (
-    <div className="container text-center">
-      <div className="row card-body">
-        <h4>Carrito de Compras</h4>
+    <div className="container">
+      <div className="row">
+        <h4 className="text-center">Carrito de Compras</h4>
+
+        <div className="text-end">
+          <div className="text-end">
+            <button
+              type="button"
+              // className="btn btn-primary position-relative"
+              className={styles.buttonRed}
+              onClick={() => vaciarCarrito()}
+              title="Vaciar Carrito"
+            >
+              <BagIcon />
+               Vaciar el Carrito .  
+            </button>
+          </div>
+
+          <div className="text-end my-2">
+            {contadorEnCarrito > 0 && (
+              <button
+                type="button"
+                // className="btn btn-Success position-relative"
+                className={styles.buttonGreen}
+                onClick={() => MsnCompletoLaCompra(vaciarCarrito())}
+                title="Continuar la Compra"
+              >
+                <Link to={"/"}>
+                  <CartCheckFill />
+                </Link>
+                Procesar el pago
+              </button>
+            )}
+          </div>
+        </div>
+
         {carrito.map((producto, indice) => (
-          <div key={indice}>
-            <div className="col col-md-4 mb-4 card-title">
-              <img
-                className={styles.imagen}
-                src={producto.imagen}
-                alt={producto.nombre}
-                height={80}
-                width={80}
-              />
-              <p className="card-text col-md-auto">
+          <div key={indice} className="card col-12 col-md4 col-lg-3">
+            <img
+              className="card-img-top img-fluid"
+              src={producto.imagen}
+              alt={producto.nombre}
+            />
+
+            <div className="card-body">
+              <p className="card-title">
                 {producto.nombre} : ${producto.precio}
               </p>
-              <button onClick={() => eliminarDelCarrito(indice)}>
-                Eliminar
-              </button>
             </div>
+
+            <button
+              className={styles.buttonRed}
+              onClick={() => eliminarDelCarrito(indice)}
+              title="Eliminar del carrito."
+            >
+              <CartDash /> Eliminar del Carrito
+            </button>
           </div>
         ))}
       </div>
@@ -35,34 +77,3 @@ const Carrito = () => {
 };
 
 export default Carrito;
-//   const { productosEnCarrito, productosEliminados } = useContext(CarritoContext);
-
-//   return (
-//     <ul>
-//       <div>
-//         <li>
-//           <h2>Carrito</h2>
-//           {productosEnCarrito.map((producto, indice) => (
-//             <div key={indice}>
-//               <img
-//                 src={producto.image}
-//                 alt={producto.title}
-//                 height={80}
-//                 width={80}
-//               />
-//               <p>{producto.title} : {producto.price}</p>
-//               <button
-//                 className={styles.buttonRed}
-//                 onClick={() => productosEliminados(indice)}
-//               >
-//                 Eliminar
-//               </button>
-//             </div>
-//           ))}
-//         </li>
-//       </div>
-//     </ul>
-//   );
-// };
-
-// export default Carrito;
