@@ -15,8 +15,8 @@ const Productos = () => {
   if (error) return error;
 
   return (
-    <div className="container ">
-      <div className="row ">
+    <div className="container">
+      <div className="row">
         {/* justify-content-md-center */}
         <h4 className="text-center">Lista de Productos</h4>
         {productos.map((producto) => (
@@ -46,9 +46,10 @@ const Productos = () => {
               className={styles.buttonGreen}
               onClick={() => agregarAlCarrito(producto)}
               title="Agregar al Carrito"
-            >
+              >
               <CartPlus /> Agregar Al Carrito
             </button>
+
             {/* boton detalles del producto */}
             <button className={styles.buttonDetalle}>
               <Link
