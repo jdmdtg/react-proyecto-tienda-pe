@@ -7,10 +7,8 @@ const Navbar = () => {
   // const esAdmin = usuario === "admin";
   const usuarioLogueado = usuario;
 
-
-
-
   return (
+    
     <nav
       className="
         navbar
@@ -70,14 +68,13 @@ const Navbar = () => {
                 </Link>
               )}
             </li>
-            
+
             <li className="nav-item">
               {usuarioLogueado === "usuario" && (
                 <Link to="/" className="nav-link">
                   "Bienvenido"
                   <h6 className="text-center">(Cliente)</h6>
                 </Link>
-
               )}
             </li>
           </ul>
