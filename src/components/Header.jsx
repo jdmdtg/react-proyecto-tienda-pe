@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import NavBar from "./NavBar";
 
+
 // import styles from "../components/Header.module.css";
 import BagIcon from "../assets/BagIcon";
 import { Link } from "react-router-dom";
