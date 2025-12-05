@@ -7,15 +7,18 @@ import "./index.css";
 import { AuthProvider } from "./context/AuthContext";
 import { ProductosProvider } from "./context/ProductosContext";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BusquedaProvider } from "./context/BusquedaContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <AuthProvider>
         <ProductosProvider>
-          <CarritoProvider>
-            <App />
-          </CarritoProvider>
+          <BusquedaProvider>
+            <CarritoProvider>
+              <App />
+            </CarritoProvider>
+          </BusquedaProvider>
         </ProductosProvider>
       </AuthProvider>
     </BrowserRouter>

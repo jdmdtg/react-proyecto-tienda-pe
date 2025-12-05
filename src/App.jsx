@@ -11,20 +11,20 @@ import VentaCaliente from "./pages/VentaCaliente";
 import Moda from "./pages/Moda";
 import ProductoDetalle from "./pages/ProductoDetalle";
 import Login from "./pages/Login";
- 
+import BusquedaProductos from "./components/BusquedaProductos";
 
 function App() {
   return (
     <>
-     
       <Header />
-  
+
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/Moda" element={<Moda />} />
         <Route path="/VentaCaliente" element={<VentaCaliente />} />
         <Route path="/Contactos" element={<Contactos />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/busqueda" element={<BusquedaProductos />} />
         <Route path="/products/:id" element={<ProductoDetalle />} />
         <Route
           path="/carrito"
