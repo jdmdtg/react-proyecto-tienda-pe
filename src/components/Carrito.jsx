@@ -1,10 +1,17 @@
 import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
 import TrashIcon from "../assets/TrashIcon";
+import { BsCartDash } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Carrito = () => {
-  const { carrito, eliminarDelCarrito, actualizarCantidad } =
-    useContext(CarritoContext);
+  const {
+    carrito,
+    eliminarDelCarrito,
+    actualizarCantidad,
+    MsnCompletoLaCompra,
+    vaciarCarrito,
+  } = useContext(CarritoContext);
 
   const subtotal = carrito.reduce((acc, producto) => {
     const cantidad = producto.cantidad || 1;
@@ -37,7 +44,7 @@ const Carrito = () => {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center px-4">
         <div className="text-center">
-          <svg
+          {/* <svg
             className="mx-auto h-24 w-24 text-gray-400 mb-4"
             fill="none"
             viewBox="0 0 24 24"
@@ -49,19 +56,20 @@ const Carrito = () => {
               strokeWidth={1.5}
               d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
             />
-          </svg>
+          </svg> */}
+
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Tu carrito está vacío
+            Tu carrito está vacío.
           </h2>
           <p className="text-gray-600 mb-6">
-            ¡Agregá productos para comenzar tu compra!
+            ¡Ve al inicio para iniciar tu compra!
           </p>
-          <a
-            href="/"
-            className="inline-block bg-black text-white px-6 py-3 rounded-md font-semibold hover:bg-[#333] transition-colors duration-200"
-          >
-            Ir a comprar
-          </a>
+
+          <Link to="/">
+            <button className="btn btn-outline-primary mt-3">
+              Volver al Inicio
+            </button>
+          </Link>
         </div>
       </div>
     );
@@ -202,7 +210,10 @@ const Carrito = () => {
                 </div>
               </div>
 
-              <button className="w-full bg-success text-white py-3 px-4 rounded-md font-semibold hover:bg-gray-800 transition-colors duration-200 mb-4 mt-2">
+              <button
+                className="w-full bg-success text-white py-3 px-4 rounded-md font-semibold hover:bg-gray-800 transition-colors duration-200 mb-4 mt-2"
+                onClick={() => MsnCompletoLaCompra(vaciarCarrito())}
+              >
                 Ya casi es tuya!
               </button>
             </div>

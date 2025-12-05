@@ -1,3 +1,4 @@
+// balde eliminar
 const TrashIcon = () => {
   return (
     <svg
